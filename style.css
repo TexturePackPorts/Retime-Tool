@@ -149,4 +149,5 @@ body.dark-mode {
 
 .dark-mode textarea {
     background-color: #444;
+    color: #fff;
 }
