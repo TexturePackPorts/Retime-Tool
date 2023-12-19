@@ -1,0 +1,190 @@
+body {
+    background-color: #FAFAFA;
+    font-family: Arial, sans-serif;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2 {
+    text-align: center;
+    color: #333;
+}
+
+form {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+textarea {
+    width: calc(100% - 10px);
+    height: 50px;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #fff;
+    box-sizing: border-box;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    color: #333;
+    resize: none;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    outline: none;
+}
+
+textarea:focus {
+    border-color: #007BFF;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.5);
+}
+
+input[type="text"] {
+    width: calc(100% - 10px);
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #fff;
+    box-sizing: border-box;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    color: #333;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    outline: none;
+}
+
+input[type="text"]:focus {
+    border-color: #007BFF;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.5);
+}
+
+.dark-mode input[type="text"] {
+    background-color: #444;
+    color: #fff;
+}
+
+input[type="button"] {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+input[type="button"]:hover {
+    background-color: #444;
+}
+
+input[type="button"]:active {
+    background-color: #1a1a1a;
+    transform: scale(0.98);
+}
+
+#modMessage {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    color: #007BFF;
+}
+
+.dark-mode #modMessage {
+    color: #FFA500;
+}
+
+#result {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+#youtube-button {
+    display: inline-block;
+    font-size: 24px;
+    color: #fff;
+    background-color: #FF0000;
+    padding: 10px;
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    text-decoration: none;
+}
+
+#youtube-button:hover {
+    transform: scale(1.1);
+}
+
+#modeSwitcher {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #007BFF;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#modeSwitcher:hover {
+    background-color: #0056b3;
+}
+
+#modeSwitcher:active {
+    background-color: #003580;
+    transform: scale(0.98);
+}
+
+#modeSwitcher:focus {
+    outline: none;
+}
+
+body.dark-mode {
+    background-color: #1a1a1a;
+    color: #f5f5f5;
+}
+
+.dark-mode h1, .dark-mode h2 {
+    color: #f5f5f5;
+}
+
+.dark-mode form {
+    border-color: #444;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+}
+
+.dark-mode input[type="button"] {
+    background-color: #007BFF;
+    color: #f5f5f5;
+}
+
+.dark-mode input[type="button"]:hover {
+    background-color: #0056b3;
+}
+
+.dark-mode #result {
+    color: #f5f5f5;
+}
+
+.dark-mode textarea {
+    background-color: #444;
+    color: #fff;
+}
