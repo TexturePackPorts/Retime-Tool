@@ -14,6 +14,8 @@
         <textarea id="startTime" name="startTime"></textarea><br>
         <label for="endTime">End Time:</label><br>
         <textarea id="endTime" name="endTime"></textarea><br>
+        <label for="fps">Video FPS:</label><br>
+        <input type="text" id="fps" name="fps"><br>
         <input type="button" value="Calculate" onclick="calculateTime()">
         <button id="modeSwitcher">Switch to Dark Mode</button>
         <a href="https://www.youtube.com/@hxmbt2" id="youtube-button" target="_blank">
@@ -26,12 +28,14 @@
         function calculateTime() {
             var startTime = document.getElementById('startTime').value;
             var endTime = document.getElementById('endTime').value;
+            var fps = document.getElementById('fps').value;
 
-            if (isNaN(startTime) || isNaN(endTime)) {
+            if (isNaN(startTime) || isNaN(endTime) || isNaN(fps)) {
                 document.getElementById('result').innerHTML = "Invalid input";
             } else {
-                var difference = endTime - startTime;
-                document.getElementById('result').innerHTML = "Total time: " + difference.toFixed(3) + " seconds";
+                var differenceInFrames = (endTime - startTime) * fps;
+                var differenceInSeconds = differenceInFrames / fps;
+                document.getElementById('result').innerHTML = "Total frames: " + Math.round(differenceInFrames) + ", Total time: " + differenceInSeconds.toFixed(3) + " seconds";
             }
         }
 
