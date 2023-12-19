@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Speedrun Retime Tool</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="icon" type="image/x-icon" href="favicon.png">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Speedrun Retime Tool</h1>
+    <h2>Made by hxmbt</h2>
+    <form id="timeForm">
+        <label for="startTime">Start Time:</label><br>
+        <textarea id="startTime" name="startTime"></textarea><br>
+        <label for="endTime">End Time:</label><br>
+        <textarea id="endTime" name="endTime"></textarea><br>
+        <input type="button" value="Calculate" onclick="calculateTime()">
+        <button id="modeSwitcher">Switch to Dark Mode</button>
+        <a href="https://www.youtube.com/@hxmbt2" id="youtube-button" target="_blank">
+            <i class="fab fa-youtube"></i>
+        </a>
+    </form>
+    <p id="result"></p>
+
+    <script>
+        function calculateTime() {
+            var startTimeDebugInfo = document.getElementById('startTime').value;
+            var endTimeDebugInfo = document.getElementById('endTime').value;
+
+            var startTime = extractTime(startTimeDebugInfo);
+            var endTime = extractTime(endTimeDebugInfo);
+
+            var difference = endTime - startTime;
+
+            document.getElementById('result').innerHTML = "Total time: " + difference.toFixed(3) + " seconds";
+        }
+
+        function extractTime(debugInfo) {
+            var debugJson = JSON.parse(debugInfo);
+            return parseFloat(debugJson.vct);
+        }
+
+        document.getElementById('modeSwitcher').addEventListener('click', function(event) {
+            event.preventDefault()
+            var body = document.body;
+            if (body.classList.contains('dark-mode')) {
+                body.classList.remove('dark-mode');
+                this.innerHTML = "Switch to Dark Mode"
+            } else {
+                body.classList.add('dark-mode');
+                this.innerHTML = "Switch to Light Mode";
+            }
+        })
+    </script>
+</body>
+</html>
