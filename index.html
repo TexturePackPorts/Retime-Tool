@@ -23,6 +23,12 @@
             <i class="fab fa-youtube"></i>
         </a>
     </form>
+    <form id="addTimeForm">
+        <label for="addTimeInput">Time to Add: </label><br>
+        <input type="text" id="addTimeInput" name="addTimeInput"><br>
+        <input type="button" value="Add Time" onclick="addTime()">
+    </form>
+    <p id="totalTime">Total Time: 0 seconds</p>
     <p id="result"></p>
     <p id="modMessage"></p>
 
@@ -84,6 +90,20 @@
                 button.innerHTML = "Copy Mod Note";
             }, 2000);
         });
+
+        var totalTime = 0;
+
+        function addTime() {
+            var addTimeInput = document.getElementById('addTimeInput').value;
+            var addTimeInSeconds = parseFloat(addTimeInput);
+
+            if (!isNaN(addTimeInSeconds)) {
+                totalTime += addTimeInSeconds;
+                document.getElementById('totalTime').innerHTML = "Total Time: " + totalTime.toFixed(3) + " seconds";
+            } else {
+                document.getElementById('totalTime').innerHTML = "Invalid input. Please enter a number.";
+            }
+        }
     </script>
 </body>
 </html>
