@@ -3,6 +3,7 @@
 <head>
     <title>Speedrun Retime Tool</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <script src="https://www.youtube.com/iframe_api"></script>
     <link rel="icon" type="image/x-icon" href="favicon.png">
     <link rel="stylesheet" href="style.css">
 </head>
@@ -10,10 +11,12 @@
     <h1>Speedrun Retime Tool</h1>
     <h2>Made by hxmbt</h2>
     <form id="timeForm">
-        <label for="startTime">Start Time:</label><br>
-        <textarea id="startTime" name="startTime"></textarea><br>
-        <label for="endTime">End Time:</label><br>
-        <textarea id="endTime" name="endTime"></textarea><br>
+        <label for="youtubeLink">YouTube Link:</label><br>
+        <input type="text" id="youtubeLink" name="youtubeLink"><br>
+        <input type="button" value="Load Video" onclick="loadVideo()"><br>
+        <div id="youtubeVideo"></div>
+        <input type="button" value="Set Start Time" onclick="setStartTime()">
+        <input type="button" value="Set End Time" onclick="setEndTime()">
         <label for="fps">Video FPS:</label><br>
         <input type="text" id="fps" name="fps"><br>
         <input type="button" value="Calculate" onclick="calculateTime()">
