@@ -25,6 +25,7 @@ form {
     border-radius: 4px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
+    overflow: hidden;
 }
 
 label {
@@ -33,9 +34,8 @@ label {
     transition: all 0.3s ease;
 }
 
-textarea {
+textarea, input[type="text"], iframe {
     width: calc(100% - 10px);
-    height: 50px;
     padding: 10px;
     margin-bottom: 20px;
     border: 1px solid #ccc;
@@ -45,34 +45,19 @@ textarea {
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     font-size: 16px;
     color: #333;
-    resize: none;
     transition: all 0.3s ease;
     outline: none;
 }
 
-textarea:focus {
+textarea:focus, input[type="text"]:focus {
     border-color: #007BFF;
     box-shadow: 0 0 8px rgba(0, 123, 255, 0.5);
 }
 
-input[type="text"] {
-    width: calc(100% - 10px);
-    padding: 10px;
-    margin-bottom: 20px;
-    border: 1px solid #ccc;
+iframe {
+    height: 315px;
     border-radius: 4px;
-    background-color: #fff;
-    box-sizing: border-box;
-    font-family: Helvetica, Arial, sans-serif;
-    font-size: 16px;
-    color: #333;
-    transition: all 0.3s ease;
-    outline: none;
-}
-
-input[type="text"]:focus {
-    border-color: #007BFF;
-    box-shadow: 0 0 8px rgba(0, 123, 255, 0.5);
+    overflow: hidden;
 }
 
 #totalTime {
@@ -89,7 +74,7 @@ input[type="text"]:focus {
     display: inline-block;
 }
 
-.dark-mode input[type="text"] {
+.dark-mode input[type="text"], .dark-mode textarea {
     background-color: #444;
     color: #fff;
     transition: all 0.3s ease;
@@ -203,6 +188,10 @@ body.dark-mode {
 .dark-mode h1, .dark-mode h2 {
     color: #f5f5f5;
     transition: all 0.3s ease;
+}
+
+.dark-mode iframe {
+    background-color: #1a1a1a;
 }
 
 .dark-mode form {
